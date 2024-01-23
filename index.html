@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <title>zain ul Abdin (116841)</title>
+</head>
+
+<body>
+    <div class="main">
+        <h1>Text Edit</h1>
+       <p id="para" class="para2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate nemo odit doloremque itaque nostrum possimus natus facere accusantium modi quo dolore nobis delectus, error qui doloribus quasi mollitia nam incidunt?</p>
+            <div class="bar">
+                <i id="bold" class="fa-solid fa-bold" onclick="bold ()"></i>
+                <i id="italic" class="fa-solid fa-italic" onclick="italic ()"></i>
+                <i id="uner" class="fa-solid fa-underline" onclick="underline ()"></i>
+                <i id="tleft" class="fa-solid fa-align-left" onclick="textLeft ()"></i>
+                <i id="tright" class="fa-solid fa-align-center" onclick="textCenter ()"></i>
+                <i id="tcenter" class="fa-solid fa-align-right" onclick="textRight ()"></i>
+            </div>
+                <div>
+                <input type="search" name="" id="inp" class ="input2">
+                <i class="fa-solid fa-magnifying-glass " onclick="search()"></i>
+            </div>
+    </div>
+
+</body>
+<style>
+    body{
+        background-color: rgba(2, 25, 59, 0.913);
+    }
+    .bar{
+        background-color:green;
+        margin: auto;
+        padding: 5px;
+    }
+.main {
+  text-align: center;
+}
+h1 {
+    color: rgb(114, 114, 232);
+}
+.para2 {
+
+    border: 1px solid black;
+    width: 90vh;
+    height: 20vh;
+  margin: auto;
+    background-color: rgba(235, 240, 245, 0.904);
+}
+i{
+    margin: 10px;
+    padding: 10px;
+
+}
+input{
+    border-radius: 10px;
+    padding: 5px;
+    
+}
+</style>
+
+<script>
+    var para = document.getElementById('para')
+    var flage = true
+function search(){
+    var change = para.innerText
+    var input1 = document.getElementById('inp').value
+    if (input1 === "" || input1 === " "){
+        alert("please Enter A value")
+    }
+    console.log(input1);
+    para.innerHTML = (change.replaceAll(input1,`<mark>${input1}</mark>`))
+}
+function bold (){
+    if(flage === true){
+        flage = false
+        var bld = document.getElementById('bold')
+        para.style.fontWeight= "900"
+    }else{
+        flage = true
+        para.style.fontWeight= "100"
+    }
+}
+function italic (){
+    if(flage === true){
+        para.style.fontStyle= "italic"
+        flage = false
+    }else{
+        para.style.fontStyle= "normal"
+        flage = true
+    }
+}
+function underline (){
+    if(flage === true){
+        para.style.textDecoration= "underline"
+        flage = false
+    }else{
+        para.style.textDecoration= "none"
+        flage = true
+    }
+}
+function textRight (){
+    if(flage === true){
+        para.style.textAlign= "right"
+        flage = false
+    }else{
+        para.style.textAlign= ""
+        flage = true
+    }
+}
+function textLeft (){
+    if(flage === true){
+        para.style.textAlign= "left"
+        flage = false
+    }else{
+        para.style.textAlign= ""
+        flage = true
+    }
+}
+function textLeft (){
+    if(flage === true){
+        para.style.textAlign= "left"
+        flage = false
+    }else{
+        para.style.textAlign= ""
+        flage = true
+    }
+}
+function textCenter (){
+    if(flage === true){
+        para.style.textAlign= "center"
+        flage = false
+    }else{
+        para.style.textAlign= ""
+        flage = true
+    }
+}
+
+</script>
+</html>
